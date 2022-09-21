@@ -748,6 +748,15 @@ FOOTER BASICS
     border-top: 1px solid rgb(115 115 115);
 }
 
+.round-bottom-left-right{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.shadow-bot-blue{
+    -webkit-box-shadow: 0 7px 26px 2px rgb(8 0 36 / 11%);
+    box-shadow: 0 0px 26px 2px rgb(8 0 36 / 21%);
+}
+
 /* 
   ----------------------------
   END -- NEW FOOTER
