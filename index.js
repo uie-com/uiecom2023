@@ -20,14 +20,15 @@ const eventRetrieveal = () => {
   }
 
   const timeTillStart = new Date(nearestEvent["dtstart"]) - now;
+  const dateOptions = {
+    dateStyle: "full",
+    timeStyle: "short",
+  };
 
   document.getElementById("title").innerHTML = `${nearestEvent["summary"]}`;
   document.getElementById("date").innerHTML = `${new Intl.DateTimeFormat(
     "en-US",
-    {
-      dateStyle: "full",
-      timeStyle: "short",
-    }
+    dateOptions
   ).format(new Date(nearestEvent["dtstart"]))}`;
 
   const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1;
