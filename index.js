@@ -19,7 +19,7 @@ const eventRetrieveal = () => {
     }
   }
 
-  const diffInMs = new Date(nearestEvent["dtstart"]) - now;
+  const timeTillStart = new Date(nearestEvent["dtstart"]) - now;
 
   document.getElementById("title").innerHTML = `${nearestEvent["summary"]}`;
   document.getElementById("date").innerHTML = `${new Intl.DateTimeFormat(
@@ -30,22 +30,21 @@ const eventRetrieveal = () => {
     }
   ).format(new Date(nearestEvent["dtstart"]))}`;
 
-  const numDays =
-    Math.floor((new Date(nearestEvent["dtend"]) - now) / millisecondsInDay) + 1;
-  const numHours = Math.floor(diffInMs / millisecondsin1H) + 1;
-  const numMins = Math.floor(diffInMs / millisecondsinMin) + 1;
+  const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1;
+  const numHours = Math.floor(timeTillStart / millisecondsin1H) + 1;
+  const numMins = Math.floor(timeTillStart / millisecondsinMin) + 1;
 
   if (
-    diffInMs < millisecondsIn7H &&
-    diffInMs > millisecondsin1H &&
-    diffInMs > 0
+    timeTillStart < millisecondsIn7H &&
+    timeTillStart > millisecondsin1H &&
+    timeTillStart > 0
   ) {
     if (numHours > 1) {
       document.getElementById("countdown").innerHTML = document.getElementById(
         "countdown-mobile"
       ).innerHTML = `Starts in ${numHours} hours`;
     }
-  } else if (diffInMs < millisecondsin1H && diffInMs > 0) {
+  } else if (timeTillStart < millisecondsin1H && timeTillStart > 0) {
     if (numMins > 1) {
       document.getElementById("countdown").innerHTML = document.getElementById(
         "countdown-mobile"
