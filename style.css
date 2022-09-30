@@ -92,7 +92,6 @@ body {
     padding: 0;
     margin: 5px;
     font-size: 1em;
-
 }
 
 .hero-img {
@@ -196,9 +195,67 @@ background:teal;
     -o-transition: height 0.3s ease-in-out;
     transition: height 0.3s ease-in-out;
 }
+.card {
+    padding:10px;
+    margin-top:50px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    justify-content: space-between;
 
+    -moz-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 3px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 3px 0 rgb(0 0 0 / 15%);
+}
+.card:hover {
+    -moz-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 20px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 20px 0 rgb(0 0 0 / 15%);
+}
+.flex{
+    display: flex;
+}
 
+@media (max-width:600px) {
+    .card {
+        flex-direction: column;
+    }
+}
 
+.card .half{
+    padding:20px;
+    flex-basis: 50%;
+}
+.card .img{
+    border-radius: 10px;
+}
+.card h2{
+    max-width: 360px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+.card p{
+    margin-top:0;
+    margin-bottom:0;
+    line-height: 1.5;
+    font-size: 18px;
+}
+.line{
+    display: inline-block;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: teal;
+    min-height: 5px;
+}
+
+.img{
+    width: 100%;
+    display: block;
+}
 
 .event {
     display: flex;
