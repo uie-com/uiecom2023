@@ -138,6 +138,20 @@ border:1px solid rgb(0, 110, 110);
 background:teal;
 
 }
+.call-form .half{
+    flex-basis: 50%;
+}
+
+.call-form .half h2{
+    max-width: 360px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+.call-form p{ 
+    max-width: 450px;
+}
 
 @media (max-width:500px) {
     .menu ul {
