@@ -1,4 +1,5 @@
 const eventRetrieveal = () => {
+ 
   const millisecondsInDay = 86400000,
     millisecondsIn7H = 25200000,
     millisecondsin1H = 3600000,
@@ -18,12 +19,12 @@ const eventRetrieveal = () => {
       }
     }
   }
- 
-  const timeTillStart = new Date(nearestEvent["dtstart"]) - now;
-  const dateOptions = {
-    dateStyle: "full",
-    timeStyle: "short",
-  };
+
+  const timeTillStart = new Date(nearestEvent["dtstart"]) - now,
+    dateOptions = {
+      dateStyle: "full",
+      timeStyle: "short",
+    };
 
   document.getElementById("title").innerHTML = `${nearestEvent["summary"]}`;
   document.getElementById("date").innerHTML = `${new Intl.DateTimeFormat(
@@ -31,9 +32,9 @@ const eventRetrieveal = () => {
     dateOptions
   ).format(new Date(nearestEvent["dtstart"]))}`;
 
-  const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1;
-  const numHours = Math.floor(timeTillStart / millisecondsin1H) + 1;
-  const numMins = Math.floor(timeTillStart / millisecondsinMin) + 1;
+  const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1,
+    numHours = Math.floor(timeTillStart / millisecondsin1H) + 1,
+    numMins = Math.floor(timeTillStart / millisecondsinMin) + 1;
 
   if (
     timeTillStart < millisecondsIn7H &&
