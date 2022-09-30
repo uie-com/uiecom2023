@@ -19,9 +19,9 @@
 
                 <a href="/">
 
-            
-                <img src="CC-UIE-logo.png" class="cc-logo" style="max-height:30px;" alt="">
-            </a>
+
+                    <img src="CC-UIE-logo.png" class="cc-logo" style="max-height:30px;" alt="">
+                </a>
 
                 <a class="loa" href="https://leaders.centercentre.com/"><img src="uxbuble.avif" width="30" height="30"
                         alt="">
@@ -30,7 +30,8 @@
 
             </div>
             <img style="border-top-right-radius:10px; border-top-left-radius:10px;  -webkit-box-shadow: 0px -14px 26px -6px rgba(8,0,36,0.22); 
-        box-shadow: 0px -14px 26px -6px rgba(8,0,36,0.22);" src="img/jared-live/jared-hero.jpg" class="hero-img" alt="">
+        box-shadow: 0px -14px 26px -6px rgba(8,0,36,0.22);" src="img/jared-live/jared-hero.jpg" class="hero-img"
+                alt="">
 
         </div>
     </div>
@@ -38,7 +39,8 @@
         <div class="container">
             <div class="menu light-bg">
                 <ul>
-                    <li class="current" onmouseenter="document.getElementById('example-show').classList.add('menu-description-opened')"
+                    <li class="current"
+                        onmouseenter="document.getElementById('example-show').classList.add('menu-description-opened')"
                         onmouseleave="document.getElementById('example-show').classList.remove('menu-description-opened')">
                         <a>Jared Live</a>
                     </li>
@@ -74,8 +76,8 @@
 
 
                     <div class="describe">
-                        <h3>The Communication Skills of Influential UX Leader</h3>
-                        <h4 class="event-date">Mon, August 22nd at 2:00 pm (18.00 GMT)</h4>
+                        <h3 id ="title">The Communication Skills of Influential UX Leader</h3>
+                        <h4  id= "date" class="event-date">Mon, August 22nd at 2:00 pm (18.00 GMT)</h4>
 
 
                         <div>Add to calendar:
@@ -89,20 +91,27 @@
                                     Outlook</a></span>
                         </div>
 
-                        <div class="description-inner" style="max-height:30px ; overflow:hidden; display: flex; margin-bottom: 10px;">
+                        <div class="description-inner"
+                            style="max-height:30px ; overflow:hidden; display: flex; margin-bottom: 10px;">
                             <div class="inner-text" style="max-width:400px ;">
-                                <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                            <p>At blanditiis, fugiat cumque totam harum nisi optio saepe earum enim qui labore quidem dolorem temporibus minus aspernatur libero tempore, reiciendis voluptatibus ab? Rem facilis eos magnam animi, earum commodi laboriosam mollitia, nihil nisi at sunt ipsa quasi iure, ad quae soluta.</p>
+                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                <p>At blanditiis, fugiat cumque totam harum nisi optio saepe earum enim qui labore
+                                    quidem dolorem temporibus minus aspernatur libero tempore, reiciendis voluptatibus
+                                    ab? Rem facilis eos magnam animi, earum commodi laboriosam mollitia, nihil nisi at
+                                    sunt ipsa quasi iure, ad quae soluta.</p>
                             </div>
-                          <div class="read-more" onClick="readMore(this)" style="display: inline-flex; flex-shrink: 0; padding-left:10px; font-size:15px; color:rgb(83, 88, 85);"><p>(Read more)</p></div>
+                            <div class="read-more" onClick="readMore(this)"
+                                style="display: inline-flex; flex-shrink: 0; padding-left:10px; font-size:15px; color:rgb(83, 88, 85);">
+                                <p>(Read more)</p>
+                            </div>
                         </div>
 
                         <div class="event-extended hide-morethan-500">
                             <div class="event-type">
                                 Free Event
                             </div>
-                            <div class="event-countdown">
-                                Starts in 3 days
+                            <div id ="countdown-mobile" class="event-countdown">
+                            
                             </div>
                         </div>
 
@@ -118,8 +127,8 @@
                 <div class="event-type">
                     Free Event
                 </div>
-                <div class="event-countdown">
-                    Starts in 3 days
+                <div id ="countdown" class="event-countdown">
+                   
                 </div>
             </div>
         </div>
@@ -253,16 +262,19 @@
     </div>
 
     <script>
-        function readMore(elem)
-        {
-            if(elem.parentNode.style.maxHeight=="none"){
-                elem.innerHTML="<p>(Read more)</p>"
-                elem.parentNode.style.maxHeight="30px"
-            } else{
-                elem.innerHTML="<p>(Read less)</p>"
-            elem.parentNode.style.maxHeight="none";}
+        function readMore(elem) {
+            if (elem.parentNode.style.maxHeight == "none") {
+                elem.innerHTML = "<p>(Read more)</p>"
+                elem.parentNode.style.maxHeight = "30px"
+            } else {
+                elem.innerHTML = "<p>(Read less)</p>"
+                elem.parentNode.style.maxHeight = "none";
+            }
         }
-        </script>
+    </script>
+
+    <script src="calendar.js"></script>
+    <script src="index.js"></script>
 
 </body>
 

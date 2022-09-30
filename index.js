@@ -18,7 +18,7 @@ const eventRetrieveal = () => {
       }
     }
   }
-
+ 
   const timeTillStart = new Date(nearestEvent["dtstart"]) - now;
   const dateOptions = {
     dateStyle: "full",
