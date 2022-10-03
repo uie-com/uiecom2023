@@ -9,13 +9,13 @@ const eventRetrieveal = () => {
   //no value edge case
   let nearestEvent = null;
 
-  for (const event of calData) {
-    if (Date.parse(event["dtend"]) > now) {
+  for (const currEvent of calData) {
+    if (Date.parse(currEvent["dtend"]) > now) {
       if (
         nearestEvent == null ||
-        Date.parse(nearestEvent["dtstart"]) > Date.parse(event["dtstart"])
+        Date.parse(nearestEvent["dtstart"]) > Date.parse(currEvent["dtstart"])
       ) {
-        nearestEvent = event;
+        nearestEvent = currEvent;
       }
     }
   }
