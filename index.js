@@ -1,5 +1,9 @@
+//TODO 
+//1. Make ICS files
+//2. Make a way to retrieve our newest events without needing to do it ourselves.
+
 const eventRetrieveal = () => {
- 
+
   const millisecondsInDay = 86400000,
     millisecondsIn7H = 25200000,
     millisecondsin1H = 3600000,
@@ -9,12 +13,17 @@ const eventRetrieveal = () => {
   //no value edge case
   let nearestEvent = null;
 
+  //Grabbing the events from calendar.js
   for (const currEvent of calData) {
+    //Checks if the event has ended already
     if (Date.parse(currEvent["dtend"]) > now) {
+      //Checks if the next event start is greater than the current event
       if (
         nearestEvent == null ||
         Date.parse(nearestEvent["dtstart"]) > Date.parse(currEvent["dtstart"])
       ) {
+        //If our current event has ended and our next event start date is close then it will 
+        // be assigned as our current event
         nearestEvent = currEvent;
       }
     }
@@ -56,6 +65,7 @@ const eventRetrieveal = () => {
         "countdown-mobile"
       ).innerHTML = "Starts in 1 minute";
     }
+    //When the event is happening it will say it's in progress.
   } else if (
     now >= Date.parse(nearestEvent["dtstart"]) &&
     now <= Date.parse(nearestEvent["dtend"])
