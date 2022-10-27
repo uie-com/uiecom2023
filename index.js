@@ -41,6 +41,15 @@ const eventRetrieveal = () => {
     dateOptions
   ).format(new Date(nearestEvent["dtstart"]))}`;
 
+  //Getting the year, month, day, hour for the nearest event
+  let eventStartFullYear = new Date(nearestEvent["dtstart"]).getFullYear();
+  let eventStartMonth = parseInt(new Date(nearestEvent["dtstart"]).getMonth()) + 1;
+  let eventStartDay = new Date(nearestEvent["dtstart"]).getDate();
+  let eventStartHour = parseInt(new Date(nearestEvent["dtstart"]).getHours()) + 4;
+  let eventEndHour = parseInt(new Date(nearestEvent["dtend"]).getHours()) + 4;
+
+  document.getElementById("google-calendar").href = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${nearestEvent["summary"]}&dates=${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventStartHour}0000Z/${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventEndHour}0000Z&details=https://us02web.zoom.us/j/88292728501?pwd%3DY0tBR25GbFF4MUxhWnd5MFI5S3hNUT09&location=https://us02web.zoom.us/j/88292728501?pwd=Y0tBR25GbFF4MUxhWnd5MFI5S3hNUT09&trp=true`
+
   const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1,
     numHours = Math.floor(timeTillStart / millisecondsin1H) + 1,
     numMins = Math.floor(timeTillStart / millisecondsinMin) + 1;
