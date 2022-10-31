@@ -7,9 +7,9 @@
 
 //Issues
 //Current events are one hour ahead
-import dotenv from './dotenv';
+var dotenv = require('dotenv');
 dotenv.config()
-import Airtable from './airtable';
+var Airtable = require('airtable')
 
 Airtable.configure({ apiKey: process.env.AIRTABLE_API_KEY })
 const base = Airtable.base(process.env.AIRTABLE_BASE);
