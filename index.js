@@ -3,9 +3,7 @@
 //2. Make a way to retrieve our newest events without needing to do it ourselves.
 
 //Methods
-//Express
-//Zapier
-//Airtable
+//Airtable (We will go ahead with this one! API here we come)
 
 //Issues
 //Current events are one hour ahead
@@ -21,24 +19,8 @@ const eventRetrieveal = () => {
   //no value edge case
   let nearestEvent = null;
 
-  async () => {
-    await fetch('https://54d5510b-fc36-4892-a8fc-c2971ffd764f.mock.pstmn.io/calendar-get',
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(
-          {
-            'title': 'Win Info Session'
-          }
-        )
-      }
-    ).then(res => { return res.text() }).then(data => console.log(data))
-  }
-
   //Grabbing the events from calendar.js
-  for (const currEvent of calData) {
+  for (const currEvent of airtableData) {
     //Checks if the event has ended already
     if (Date.parse(currEvent["dtend"]) > now) {
       //Checks if the next event start is greater than the current event
