@@ -1,4 +1,5 @@
-import dontenv from 'dotenv';
+import dotenv from 'dotenv';
+dotenv.config()
 import Airtable from 'airtable';
 
 Airtable.configure({ apiKey: process.env.AIRTABLE_API_KEY })
