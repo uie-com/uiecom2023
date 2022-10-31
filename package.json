@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "airtable": "^0.11.5",
     "dotenv": "^16.0.3"
