@@ -1,7 +1,32 @@
 {
+  "name": "uiecom2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "dependencies": {
+    "abort-controller": "^3.0.0",
+    "abortcontroller-polyfill": "^1.7.5",
     "airtable": "^0.11.5",
-    "dotenv": "^16.0.3"
-  }
+    "dotenv": "^16.0.3",
+    "event-target-shim": "^5.0.1",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.7",
+    "tr46": "^0.0.3",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uie-com/uiecom2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uie-com/uiecom2022/issues"
+  },
+  "homepage": "https://github.com/uie-com/uiecom2022#readme"
 }

@@ -1,28 +1,30 @@
-import dotenv from 'dotenv';
+import dotenv from './node_modules/dotenv/lib/main.js';
 dotenv.config()
 import Airtable from 'airtable';
 
 Airtable.configure({ apiKey: process.env.AIRTABLE_API_KEY })
 const base = Airtable.base(process.env.AIRTABLE_BASE);
 
-let airtableData = []
+let stuffData = [];
 
 base('Table 1').select({
     // Selecting the first 3 records in Grid view:
-    maxRecords: 11,
+    maxRecords: 3,
     view: "Grid view"
 }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
 
     records.forEach(function (record) {
-        airtableData.push({
-            "dtstart": `${record.get('Start Date')}`,
-            "dtend": `${record.get('End Date')}`,
-            "description": `${record.get('Event Summary')}`,
-            "location": `${record.get('Event Link')}`,
-            "image": `${record.get('Image')}`,
-            "summary": `${record.get('Title')}`
+        stuffData.push({
+            dtstart: `${record.get('Start Date')}`,
+            dtend: `${record.get('End Date')}`,
+            description: `${record.get('Event Summary')}`,
+            location: `${record.get('Event Link')}`,
+            image: `${record.get('Image')}`,
+            summary: `${record.get('Title')}`
         })
+
+        console.log(stuffData)
     });
 
     // To fetch the next page of records, call `fetchNextPage`.
