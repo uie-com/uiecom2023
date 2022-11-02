@@ -64,9 +64,9 @@ async function eventRetrieveal() {
 
   document.getElementById("google-calendar").href = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${nearestEvent.fields["Title"]}&dates=${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventStartHour}0000Z/${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventEndHour}0000Z&details=${nearestEvent.fields["Event Summary"]}&location=https://us02web.zoom.us/j/88292728501?pwd=Y0tBR25GbFF4MUxhWnd5MFI5S3hNUT09&trp=true`
 
-  const numDays = Math.floor(timeTillStart / millisecondsInDay) + 1,
-    numHours = Math.floor(timeTillStart / millisecondsin1H) + 1,
-    numMins = Math.floor(timeTillStart / millisecondsinMin) + 1;
+  const numDays = Math.floor(timeTillStart / millisecondsInDay),
+    numHours = Math.floor(timeTillStart / millisecondsin1H),
+    numMins = Math.floor(timeTillStart / millisecondsinMin);
 
   if (
     timeTillStart < millisecondsIn7H &&
@@ -90,8 +90,8 @@ async function eventRetrieveal() {
     }
     //When the event is happening it will say it's in progress.
   } else if (
-    now >= Date.parse(nearestEvent["dtstart"]) &&
-    now <= Date.parse(nearestEvent["dtend"])
+    now >= Date.parse(nearestEvent.fields["Start Date"]) &&
+    now <= Date.parse(nearestEvent.fields["End Date"])
   ) {
     document.getElementById("countdown").innerHTML = document.getElementById(
       "countdown-mobile"
