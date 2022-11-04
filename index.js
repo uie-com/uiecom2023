@@ -63,6 +63,7 @@ async function eventRetrieveal() {
   let eventEndHour = parseInt(new Date(nearestEvent.fields["End Date"]).getHours()) + 5;
 
   document.getElementById("google-calendar").href = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${nearestEvent.fields["Title"]}&dates=${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventStartHour}0000Z/${eventStartFullYear}${eventStartMonth}${eventStartDay}T${eventEndHour}0000Z&details=${nearestEvent.fields["Event Summary"]}&location=https://us02web.zoom.us/j/88292728501?pwd=Y0tBR25GbFF4MUxhWnd5MFI5S3hNUT09&trp=true`
+  document.getElementById("outlook-calendar").href = `https://outlook.live.com/calendar/0/deeplink/compose?rru=addevent&path=%2Fcalendar%2Faction%2Fcompose&startdt=${eventStartFullYear}-${eventStartMonth}-${eventStartDay}T${eventStartHour}%3A00%3A00Z&enddt=${eventStartFullYear}-${eventStartMonth}-${eventStartDay}T${eventEndHour}%3A00%3A00Z&subject=${nearestEvent.fields["Title"]}&body=${nearestEvent.fields["Event Summary"]}&location=&allday=false`
 
   const numDays = Math.floor(timeTillStart / millisecondsInDay),
     numHours = Math.floor(timeTillStart / millisecondsin1H),
